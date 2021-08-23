@@ -1,0 +1,58 @@
+$mainColor: #3da9fc;
+$accentColor: #ef4565;
+$headlineColor: #094067;
+$paragraphColor: #5f6c7b;
+$secondaryColor: #90b4ce;
+$backgroundColor: #d8eefe;
+$baseColor: #fffffe;
+$latoFont: 'lato',
+sans-serif;
+$openSansFont:'Open Sans',
+sans-serif;
+$meiryoFont: sans-serif;
+
+
+@mixin lato($color: $headlineColor, $fontSize: 20px, $fontFamily: $latoFont) {
+    color: $color;
+    font-size: $fontSize;
+    font-family: $fontFamily;
+}
+
+@mixin openSans($color: $paragraphColor, $fontSize: 20px, $fontFamily: $openSansFont) {
+    color: $color;
+    font-size: $fontSize;
+    font-family: $fontFamily;
+}
+
+@mixin absolute($top, $left) {
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+
+@mixin relative($top, $left) {
+    position: relative;
+    top: $top;
+    left: $left;
+}
+
+@mixin zIndex() {
+    position: absolute;
+    z-index: 99;
+}
+
+@mixin triangle() {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 250px 433.0px 250px;
+    border-color: transparent transparent $mainColor transparent;
+}
+
+@mixin circle() {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 1px dashed $paragraphColor;
+    background: transparent;
+}

@@ -1,0 +1,374 @@
+@import "_functions.scss";
+@import "_navigation.scss";
+@import "_hamburger.scss";
+@import "_upArrow.scss";
+
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: $baseColor;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  header {
+    height: 120vh;
+
+    .redTriangle {
+      width: 0;
+      height: 0;
+      border-top: 200px solid $accentColor;
+      border-right: 700px solid transparent;
+    }
+
+    .topText {
+      a {
+        @include openSans($baseColor);
+        @include absolute(50px, 100px);
+        line-height: 1.5rem;
+      }
+    }
+
+    .penguin {
+      @include absolute(100px, 50%);
+      width: 30px;
+
+      svg {
+        width: 30px;
+        height: 55px;
+      }
+
+      path {
+        fill: $headlineColor;
+      }
+    }
+
+    .headerText {
+      text-align: center;
+
+      h1 {
+        @include lato($headlineColor, 40px);
+        @include absolute(350px, 22%);
+        @include zIndex();
+        text-align: center;
+        letter-spacing: 16px;
+        transform: rotate(355deg);
+        font-weight: bold;
+      }
+
+      p {
+        @include openSans();
+        @include absolute(450px, 24%);
+        @include zIndex();
+        display: inline-block;
+        text-align: left;
+        letter-spacing: 2px;
+        transform: rotate(358deg);
+      }
+    }
+
+    .blueTriangle {
+      @include absolute(200px, 40%);
+      @include triangle();
+      transform: rotate(350deg);
+      animation: triangle 0.8s ease-in-out;
+    }
+
+    @keyframes triangle {
+      0% {
+        transform: rotate(320deg);
+        opacity: 0;
+      }
+
+      100% {
+        transform: rotate(350deg);
+        opacity: 1;
+      }
+    }
+
+    .circle {
+      @include absolute(250px, 30%);
+      @include circle();
+      opacity: 0;
+      animation: circle 0.5s ease-in-out 1s forwards;
+    }
+
+    @keyframes circle {
+      0% {
+        top: 40%;
+        left: 27%;
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .sideText {
+      opacity: 0;
+      animation: text 0.5s ease-in-out 0.9s forwards;
+
+      h2 {
+        @include lato($headlineColor, 24px);
+        @include absolute(240px, 75%);
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        letter-spacing: 10px;
+        padding-right: 10px;
+        border-right: 2px solid $headlineColor;
+      }
+
+      p {
+        @include openSans($headlineColor);
+        @include absolute(300px, 70%);
+        transform: rotate(90deg);
+        display: inline-block;
+        font-size: 16px;
+      }
+    }
+
+    @keyframes text {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .downArrow {
+      @include triangle();
+      @include absolute(650px, 10%);
+      transform: rotate(180deg);
+      border-width: 0 25px 43px 25px;
+      animation: down 0.5s ease-in-out 2s forwards;
+      opacity: 0;
+    }
+
+    @keyframes down {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .downArrowLine {
+      @include absolute(560px, 11.5%);
+      background-color: $headlineColor;
+      width: 2px;
+      height: 100px;
+      opacity: 0;
+      animation: line 0.5s ease-in-out 2.5s forwards;
+      transform-origin: left top;
+    }
+
+    @keyframes line {
+      0% {
+        transform: scale(0, 0);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1, 1);
+        opacity: 1;
+      }
+    }
+  }
+
+  main {
+    .works {
+      padding-top: 100px;
+      margin-top: -100px;
+      margin-bottom: 100px;
+
+      h2 {
+        @include lato($headlineColor, 40px);
+        text-align: center;
+        margin-bottom: 100px;
+        font-weight: bold;
+      }
+
+      .thumbnails {
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          width: 60%;
+          margin: 0 auto;
+
+          li {
+            list-style: none;
+            text-align: center;
+            width: calc(100% / 3);
+            margin-bottom: 50px;
+
+            a {
+              figure {
+                margin-bottom: 20px;
+              }
+
+              figcaption {
+                @include openSans();
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .about {
+      background-color: $backgroundColor;
+      clip-path: polygon(0 12%, 100% 0%, 100% 88%, 0 100%);
+      padding: 200px 0;
+      margin-bottom: 100px;
+
+      h2 {
+        @include lato($headlineColor, 40px);
+        text-align: center;
+        margin-bottom: 100px;
+        font-weight: bold;
+      }
+
+      dl {
+        display: flex;
+        flex-wrap: wrap;
+        width: 60%;
+        margin: 0 auto;
+
+        dt {
+          @include openSans();
+          text-align: center;
+          width: 45%;
+        }
+
+        dd {
+          @include openSans();
+          white-space: nowrap;
+          width: 55%;
+          line-height: 2rem;
+          margin: -0.5rem 0 50px;
+
+          data {
+            margin-right: 20px;
+          }
+
+          span {
+            margin-left: 86px;
+          }
+        }
+      }
+    }
+
+    .contact {
+      padding-top: 100px;
+      margin-top: -100px;
+      margin-bottom: 100px;
+
+      .circle {
+        @include absolute(3540px, 47%);
+        @include circle();
+        width: 100px;
+        height: 100px;
+        border: none;
+        background-color: $mainColor;
+        margin: 0 auto;
+      }
+
+      h2 {
+        @include lato($headlineColor, 40px);
+        @include zIndex();
+        position: relative;
+        text-align: center;
+        margin-bottom: 100px;
+        font-weight: bold;
+      }
+
+      p {
+        @include openSans();
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      .mail {
+        text-align: center;
+
+        .far {
+          font-size: 30px;
+          margin-right: 5px;
+          color: $headlineColor;
+        }
+
+        a {
+          @include lato($headlineColor, 30px);
+          text-decoration: underline;
+        }
+      }
+
+      .border {
+        width: 1px;
+        height: 200px;
+        background-color: $headlineColor;
+        margin: 100px auto 20px;
+      }
+
+      .home {
+        text-align: center;
+
+        a {
+          @include openSans($headlineColor);
+        }
+      }
+    }
+  }
+
+  footer {
+    .background {
+      background-color: $backgroundColor;
+      height: 100vh;
+
+      .github {
+        @include relative(50%, 0);
+        text-align: center;
+
+        .fab {
+          font-size: 40px;
+          margin-right: 5px;
+        }
+
+        a {
+          @include lato($headlineColor, 40px);
+          text-decoration: underline;
+        }
+      }
+
+      small {
+        p {
+          @include openSans($paragraphColor);
+          @include relative(80%, 5%);
+          font-size: 14px;
+          display: inline-block;
+        }
+      }
+
+      .upArrow {
+        @include relative(82%, 77%);
+        font-size: 40px;
+        display: inline-block;
+      }
+    }
+  }
+}
