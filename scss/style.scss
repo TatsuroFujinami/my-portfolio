@@ -20,6 +20,7 @@ a {
 }
 
 .container {
+
   header {
     height: 120vh;
 
@@ -53,7 +54,6 @@ a {
     }
 
     .headerText {
-      text-align: center;
 
       h1 {
         @include lato($headlineColor, 40px);
@@ -120,7 +120,7 @@ a {
 
       h2 {
         @include lato($headlineColor, 24px);
-        @include absolute(240px, 75%);
+        @include absolute(240px, 1150px);
         writing-mode: vertical-rl;
         text-orientation: upright;
         letter-spacing: 10px;
@@ -130,10 +130,11 @@ a {
 
       p {
         @include openSans($headlineColor);
-        @include absolute(300px, 70%);
+        @include absolute(300px, 1070px);
         transform: rotate(90deg);
         display: inline-block;
         font-size: 16px;
+        white-space: nowrap
       }
     }
 
@@ -149,7 +150,7 @@ a {
 
     .downArrow {
       @include triangle();
-      @include absolute(650px, 10%);
+      @include absolute(650px, 150px);
       transform: rotate(180deg);
       border-width: 0 25px 43px 25px;
       animation: down 0.5s ease-in-out 2s forwards;
@@ -167,9 +168,9 @@ a {
     }
 
     .downArrowLine {
-      @include absolute(560px, 11.5%);
+      @include absolute(560px, 174px);
       background-color: $headlineColor;
-      width: 2px;
+      width: 1px;
       height: 100px;
       opacity: 0;
       animation: line 0.5s ease-in-out 2.5s forwards;
@@ -206,14 +207,14 @@ a {
         ul {
           display: flex;
           flex-wrap: wrap;
-          justify-content: space-around;
+          justify-content: space-between;
           width: 60%;
           margin: 0 auto;
 
           li {
             list-style: none;
             text-align: center;
-            width: calc(100% / 3);
+            width: 30%;
             margin-bottom: 50px;
 
             a {
@@ -279,7 +280,7 @@ a {
       margin-bottom: 100px;
 
       .circle {
-        @include absolute(3540px, 47%);
+        @include relative(50px, 1px);
         @include circle();
         width: 100px;
         height: 100px;

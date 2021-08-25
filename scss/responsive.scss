@@ -1,0 +1,140 @@
+@import "_functions.scss";
+
+@media screen and (max-width: 1270px) {
+    .sideText {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        overflow: hidden;
+
+        header {
+
+            .topText,
+            .headerText,
+            .blueTriangle,
+            .circle,
+            .sideText,
+            .downArrow,
+            .downArrowLine {
+                margin-left: -100px;
+            }
+        }
+
+        main {
+            #works {
+                .thumbnails {
+                    ul {
+                        li {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            #about {
+                margin-left: -200px;
+
+                h2 {
+                    margin-left: 200px;
+                }
+
+                dt,
+                dd {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:599px) {
+    body {
+        .openbtn {
+            @include absolute(200px, 80%);
+        }
+    }
+
+    .container {
+        header {
+            position: relative;
+            overflow: hidden;
+
+            .penguin {
+                margin-top: 100px;
+            }
+
+            .headerText {
+                h1 {
+                    @include absolute(350px, 5%);
+                    margin-top: 100px;
+                }
+
+                p {
+                    @include absolute(450px, 12%);
+                    margin-top: 100px;
+                }
+            }
+
+            .blueTriangle,
+            .circle {
+                margin-top: 100px;
+            }
+
+            .downArrow,
+            .downArrowLine {
+                display: none;
+            }
+        }
+
+        main {
+            #about {
+                dl {
+                    flex-direction: column;
+                    width: 100%;
+                    margin-left: 100px;
+
+                    dt {
+                        width: 100%;
+                        margin-bottom: 20px;
+                    }
+
+                    dd {
+                        width: 100%;
+                        font-size: 0.8rem;
+                        text-align: center;
+                    }
+
+                    data,
+                    span {
+                        margin: 0;
+                    }
+                }
+            }
+
+            #contact {
+                .mail {
+                    a {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        #footer {
+            .github {
+                a {
+                    font-size: 1rem;
+                }
+            }
+
+            #page-top {
+                position: fixed;
+                top: 88%;
+                left: 80%;
+            }
+        }
+    }
+}
